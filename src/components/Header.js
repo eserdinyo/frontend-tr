@@ -1,19 +1,26 @@
-import React from 'react'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import * as actions from '../store/actions';
+
+
 import logo from '../assets/logo.jpg'
 
-const header = () => {
+function Header() {
+    const dispatch = useDispatch();
+
+    const getCompanies = () => {
+        dispatch(actions.fetchCompanies());
+    }
+
     return (
-        <div className="header">
-            <div className="container">
-                <div className="header__content">
-                    <img src={logo} alt="" className="logo" />
-                    <div className="nav">
-                        <a className="btn" target="_blank" href="https://github.com/frontendistanbul/technologies">Yeni Şirket Ekle</a>
-                    </div>
-                </div>
+        <div className="shadow-sm">
+            <div className="container d-flex align-items-center justify-content-between mb-5 py-3 ">
+                <img onClick={getCompanies} src={logo} alt="" style={{ height: 80, cursor: 'pointer' }} />
+                <a className="btn btn-success btn- px-5" target="_blank" style={{ fontSize: 16 }} href="https://github.com/frontendistanbul/technologies">Yeni Şirket Ekle</a>
             </div>
         </div>
     )
 }
 
-export default header;
+export default Header

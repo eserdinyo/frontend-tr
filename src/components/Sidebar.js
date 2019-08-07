@@ -1,17 +1,36 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import * as actions from '../store/actions';
 
-const sidebar = () => {
+function Sidebar() {
+
+    const dispatch = useDispatch();
+
+    const getByCity = (city) => {
+        dispatch(actions.fetchByCity(city));
+    }
+
+
     return (
-        <div className="sidebar">
-            <div className="sidebar__title">
-                <h3>Şehirler</h3>
+        <div className="mr-5" style={{ minWidth: '200px' }}>
+            <div className="bg-dark text-white p-4 rounded-top">
+                Şehirler
             </div>
-            <div className='sidebar__link'>
-                <a href="#">İstanbul</a>
-                <a href="#">İzmir</a>
+            <div className='d-flex flex-column'>
+                <a onClick={() => getByCity('İstanbul')} className="px-4 py-2 border border-bottom-0" style={{ color: '#444' }} href="#">İstanbul</a>
+                <a onClick={() => getByCity('İzmir')} className="px-4 py-2 border rounded-bottom" style={{ color: '#444' }} href="#">İzmir</a>
+            </div>
+
+            <div className="bg-dark text-white p-4 rounded-top mt-5">
+                Framework
+            </div>
+            <div className='d-flex flex-column'>
+                <a onClick={() => getByCity('React')} className="px-4 py-2 border border-bottom-0" style={{ color: '#444' }} href="#">React</a>
+                <a onClick={() => getByCity('Vue')} className="px-4 py-2 border border-bottom-0" style={{ color: '#444' }} href="#">Vue</a>
+                <a onClick={() => getByCity('Angular')} className="px-4 py-2 border" style={{ color: '#444' }} href="#">Angular</a>
             </div>
         </div>
     )
 }
 
-export default sidebar;
+export default Sidebar;
