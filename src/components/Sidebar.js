@@ -6,8 +6,12 @@ function Sidebar() {
 
     const dispatch = useDispatch();
 
-    const getByCity = (city) => {
+    const getByCity = city => {
         dispatch(actions.fetchByCity(city));
+    }
+
+    const getByTech = tech => {
+        dispatch(actions.fetchByTech(tech))
     }
 
 
@@ -25,9 +29,9 @@ function Sidebar() {
                 Framework
             </div>
             <div className='d-flex flex-column'>
-                <a onClick={() => getByCity('React')} className="px-4 py-2 border border-bottom-0" style={{ color: '#444' }} href="#">React</a>
-                <a onClick={() => getByCity('Vue')} className="px-4 py-2 border border-bottom-0" style={{ color: '#444' }} href="#">Vue</a>
-                <a onClick={() => getByCity('Angular')} className="px-4 py-2 border" style={{ color: '#444' }} href="#">Angular</a>
+                <a onClick={() => getByTech('React')} className="px-4 py-2 border border-bottom-0" style={{ color: '#444' }} href="#">React</a>
+                <a onClick={() => getByTech('Vue')} className="px-4 py-2 border border-bottom-0" style={{ color: '#444' }} href="#">Vue</a>
+                <a onClick={() => getByTech('Angular')} className="px-4 py-2 border" style={{ color: '#444' }} href="#">Angular</a>
             </div>
         </div>
     )

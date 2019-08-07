@@ -1,2 +1,3 @@
 export const FETCH_COMPANIES = 'FETCH_COMPANIES';
 export const FETCH_BY_CITIES = 'FETCH_BY_CITIES';
+export const FETCH_BY_TECH = 'FETCH_BY_TECH';

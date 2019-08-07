@@ -7,8 +7,16 @@ export const fetchByCity = payload => {
     }
 }
 
+export const fetchByTech = payload => {
+    return {
+        type: constants.FETCH_BY_TECH,
+        payload,
+    }
+}
+
 export const fetchCompanies = () => {
     return {
         type: constants.FETCH_COMPANIES,
     }
 }
+
