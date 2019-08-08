@@ -17,7 +17,7 @@ function Sidebar() {
 
     return (
         <div className="mr-5 mb-5" style={{ minWidth: '200px' }}>
-            <div className="bg-dark text-white p-4 rounded-top">
+            <div className="bg-dark text-white p-4 rounded-top darkmode-ignore d-block">
                 Şehirler
             </div>
             <div className='d-flex flex-column'>
@@ -26,7 +26,7 @@ function Sidebar() {
                 <a onClick={() => getByCity('Ankara')} className="px-4 py-2 border rounded-bottom" style={{ color: '#444' }} href="#">Ankara</a>
             </div>
 
-            <div className="bg-dark text-white p-4 rounded-top mt-5">
+            <div className="bg-dark text-white p-4 rounded-top mt-5 darkmode-ignore  d-block">
                 Framework
             </div>
             <div className='d-flex flex-column'>

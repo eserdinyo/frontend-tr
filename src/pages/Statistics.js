@@ -38,7 +38,7 @@ function Statistic() {
     return (
         <div className="container pt-5">
             <div className="d-md-flex justify-content-between">
-                <div className="mx-auto" style={{ width: '300px' }}>
+                <div className="mx-auto darkmode-ignore" style={{ width: '300px' }}>
                     <Pie
                         data={frameWorks}
                         width={100}
@@ -51,7 +51,7 @@ function Statistic() {
                         }}
                     />
                 </div>
-                <div className="mx-auto" style={{ width: '300px' }}>
+                <div className="mx-auto darkmode-ignore" style={{ width: '300px' }}>
 
                     <Pie
                         data={cities}
