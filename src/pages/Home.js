@@ -12,7 +12,7 @@ function Home() {
 
   return (
     <div className="container">
-      <div className="d-flex">
+      <div className="d-md-flex">
         <Sidebar />
         <div className="main">
           {

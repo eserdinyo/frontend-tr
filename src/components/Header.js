@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import * as actions from '../store/actions';
 
@@ -16,8 +17,13 @@ function Header() {
     return (
         <div className="shadow-sm">
             <div className="container d-flex align-items-center justify-content-between mb-5 py-3 ">
-                <img onClick={getCompanies} src={logo} alt="" style={{ height: 80, cursor: 'pointer' }} />
-                <a className="btn btn-success btn- px-5" target="_blank" style={{ fontSize: 16 }} href="https://github.com/frontendistanbul/technologies">Yeni Şirket Ekle</a>
+                <Link to='/'>
+                    <img onClick={getCompanies} src={logo} alt="" style={{ height: 80, cursor: 'pointer' }} />
+                </Link>
+                <div className="d-flex align-items-center">
+                    <Link to='/istatistik' className="btn btn-dark px-5 mr-3" style={{ fontSize: 16 }}>İstatistikler</Link>
+                    <a className="btn btn-success px-5" target="_blank" style={{ fontSize: 16 }} href="https://github.com/frontendistanbul/technologies">Yeni Şirket Ekle</a>
+                </div>
             </div>
         </div>
     )

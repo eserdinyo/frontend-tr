@@ -16,13 +16,14 @@ function Sidebar() {
 
 
     return (
-        <div className="mr-5" style={{ minWidth: '200px' }}>
+        <div className="mr-5 mb-5" style={{ minWidth: '200px' }}>
             <div className="bg-dark text-white p-4 rounded-top">
                 Şehirler
             </div>
             <div className='d-flex flex-column'>
                 <a onClick={() => getByCity('İstanbul')} className="px-4 py-2 border border-bottom-0" style={{ color: '#444' }} href="#">İstanbul</a>
                 <a onClick={() => getByCity('İzmir')} className="px-4 py-2 border rounded-bottom" style={{ color: '#444' }} href="#">İzmir</a>
+                <a onClick={() => getByCity('Ankara')} className="px-4 py-2 border rounded-bottom" style={{ color: '#444' }} href="#">Ankara</a>
             </div>
 
             <div className="bg-dark text-white p-4 rounded-top mt-5">
