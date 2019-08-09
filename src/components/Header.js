@@ -15,7 +15,7 @@ function Header() {
     }
 
     return (
-        <div className="shadow-sm">
+        <div className="shadow-sm header">
             <div className="container d-flex align-items-center justify-content-between mb-5 py-3 ">
                 <Link to='/'>
                     <img onClick={getCompanies} src={logo} alt="" style={{ height: 80, cursor: 'pointer' }} />

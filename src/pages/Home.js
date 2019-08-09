@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import Company from '../components/Company';
@@ -8,6 +9,12 @@ import Sidebar from '../components/Sidebar';
 function Home() {
 
   const companies = useSelector(state => state.companiesReducer.companies)
+
+
+  axios.get('https://github.com/jamesplease/color-test')
+    .then(res => {
+      console.log(res);
+    })
 
 
   return (
