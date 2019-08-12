@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Pie } from 'react-chartjs-2';
 import { getCityCount, getTechCount } from '../utils';
 
 function Statistic() {
+    // eslint-disable-next-line
     const [frameWorks, setFrameWorks] = useState({
         labels: ['React', 'Angular', 'Vue'],
         datasets: [{
@@ -19,6 +20,7 @@ function Statistic() {
         }]
     })
 
+    // eslint-disable-next-line
     const [cities, setCities] = useState({
         labels: ['İstanbul', 'İzmir', 'Ankara'],
         datasets: [{

@@ -20,3 +20,10 @@ export const fetchCompanies = () => {
     }
 }
 
+export const resetCompanies = () => {
+    return {
+        type: constants.RESET_COMPANIES
+    }
+}
+
+

@@ -25,7 +25,7 @@ const company = ({ name, city, www, tech }) => {
                     <p className="mb-0 ml-2" style={{ fontSize: 14, color: '#444' }}>{city}</p>
                 </div>
                 <div className="company__www">
-                    <a target="_blank" href={www}><Globe color="#c8cfdc" size={14} /></a>
+                    <a rel="noopener noreferrer" target="_blank" href={www}><Globe color="#c8cfdc" size={14} /></a>
                 </div>
             </div>
         </div>

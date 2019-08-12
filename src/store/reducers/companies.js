@@ -1,24 +1,32 @@
 import * as constants from '../constants';
-import companies from '../../api';
-
 
 const initialState = {
-    companies,
+    companies: [],
+    copyCompanies: [],
 }
 
 const companiesReducer = (state = initialState, { type, payload }) => {
     let updatedCompanies = [];
+    let filteredCompanies = [];
     switch (type) {
-        case constants.FETCH_COMPANIES:
-            return { ...state, companies: [...companies] }
+        case constants.FETCH_COMPANIES_OK:
+
+            return { ...state, companies: [...payload], copyCompanies: [...payload] }
+
+        case constants.RESET_COMPANIES:
+            return { ...state, copyCompanies: [...state.companies] }
 
         case constants.FETCH_BY_CITIES:
-            updatedCompanies = companies.filter(el => el.city === payload)
-            return { ...state, companies: [...updatedCompanies] }
+            state.copyCompanies = [...state.companies];
+            updatedCompanies = [...state.companies];
+            filteredCompanies = updatedCompanies.filter(el => el.city === payload)
+            return { ...state, copyCompanies: [...filteredCompanies] }
 
         case constants.FETCH_BY_TECH:
-            updatedCompanies = companies.filter(el => el.tech.toLowerCase().includes(payload.toLowerCase()))
-            return { ...state, companies: [...updatedCompanies] }
+            state.copyCompanies = [...state.companies];
+            updatedCompanies = [...state.companies];
+            filteredCompanies = updatedCompanies.filter(el => el.tech.toLowerCase().includes(payload.toLowerCase()))
+            return { ...state, copyCompanies: [...filteredCompanies] }
 
         default:
             return state;
