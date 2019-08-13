@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import { Pie } from 'react-chartjs-2';
 import { getCityCount, getTechCount } from '../utils';
 
 function Statistic() {
+
+    const companies = useSelector(state => state.companiesReducer.copyCompanies)
+
     // eslint-disable-next-line
     const [frameWorks, setFrameWorks] = useState({
         labels: ['React', 'Angular', 'Vue'],
         datasets: [{
             data: [
-                getTechCount('React'),
-                getTechCount('Angular'),
-                getTechCount('Vue')
+                getTechCount(companies, 'React'),
+                getTechCount(companies, 'Angular'),
+                getTechCount(companies, 'Vue')
             ],
             backgroundColor: [
                 '#47D8FF',
@@ -25,9 +29,9 @@ function Statistic() {
         labels: ['İstanbul', 'İzmir', 'Ankara'],
         datasets: [{
             data: [
-                getCityCount('İstanbul'),
-                getCityCount('İzmir'),
-                getCityCount('Ankara')
+                getCityCount(companies, 'İstanbul'),
+                getCityCount(companies, 'İzmir'),
+                getCityCount(companies, 'Ankara')
             ],
             backgroundColor: [
                 '#c0392b',

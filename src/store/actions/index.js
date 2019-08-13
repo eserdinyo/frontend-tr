@@ -26,4 +26,9 @@ export const resetCompanies = () => {
     }
 }
 
+export const setLoading = () => {
+    return {
+        type: constants.SET_LOADING
+    }
+}
 

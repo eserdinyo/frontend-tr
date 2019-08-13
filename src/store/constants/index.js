@@ -3,3 +3,4 @@ export const FETCH_COMPANIES_OK = 'FETCH_COMPANIES_OK';
 export const FETCH_BY_CITIES = 'FETCH_BY_CITIES';
 export const FETCH_BY_TECH = 'FETCH_BY_TECH';
 export const RESET_COMPANIES = 'RESET_COMPANIES';
+export const SET_LOADING = 'SET_LOADING';
