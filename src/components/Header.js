@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import * as actions from '../store/actions';
 
@@ -9,16 +9,16 @@ import logo from '../assets/logo.jpg'
 
 function Header() {
 
-	useEffect(() => {
-		dispatch(actions.fetchCompanies());
-		dispatch(actions.setLoading());
-	}, [])
-
 	const dispatch = useDispatch();
 
 	const resetCompanies = () => {
 		dispatch(actions.resetCompanies());
 	}
+
+	useEffect(() => {
+		dispatch(actions.fetchCompanies());
+		dispatch(actions.setLoading());
+	}, [])
 
 	return (
 		<div className="shadow-sm header">
@@ -35,4 +35,4 @@ function Header() {
 	)
 }
 
-export default Header
+export default withRouter(Header)

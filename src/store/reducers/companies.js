@@ -21,13 +21,11 @@ const companiesReducer = (state = initialState, { type, payload }) => {
             return { ...state, copyCompanies: [...state.companies] }
 
         case constants.FETCH_BY_CITIES:
-            state.copyCompanies = [...state.companies];
             updatedCompanies = [...state.companies];
             filteredCompanies = updatedCompanies.filter(el => el.city === payload)
             return { ...state, copyCompanies: [...filteredCompanies] }
 
         case constants.FETCH_BY_TECH:
-            state.copyCompanies = [...state.companies];
             updatedCompanies = [...state.companies];
             filteredCompanies = updatedCompanies.filter(el => el.tech.toLowerCase().includes(payload.toLowerCase()))
             return { ...state, copyCompanies: [...filteredCompanies] }
