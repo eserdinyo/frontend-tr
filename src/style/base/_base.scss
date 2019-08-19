@@ -16,9 +16,20 @@ body {
   margin-bottom: 100px;
 }
 
+.btn {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
 @media (min-width: 576px) {
   .main {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn {
+    width: auto;
+  margin-bottom: 0;
+
   }
 }
 
@@ -26,6 +37,8 @@ body {
   .main {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  
 }
 
 .example-enter {

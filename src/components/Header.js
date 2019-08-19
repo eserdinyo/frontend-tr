@@ -27,7 +27,7 @@ function Header() {
 				<Link to='/'>
 					<img onClick={resetCompanies} src={logo} alt="" style={{ height: 80, cursor: 'pointer' }} />
 				</Link>
-				<div className="d-flex align-items-center mr-5">
+				<div className="mr-5">
 					<Link to='/istatistik' className="btn btn-dark px-5 mr-3 darkmode-ignore" style={{ fontSize: 16 }}>İstatistikler</Link>
 					<a rel="noopener noreferrer" className="btn btn-success px-5 darkmode-ignore" target="_blank" style={{ fontSize: 16 }} href="https://github.com/frontendistanbul/technologies">Yeni Şirket Ekle</a>
 				</div>
